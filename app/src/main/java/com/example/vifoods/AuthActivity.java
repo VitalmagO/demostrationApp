@@ -12,6 +12,12 @@ import android.widget.Toast;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Главное окно приложения. Авторизация и создание аккаунта.
+ * @author Vitaly Melnichenko
+ * @version 1.0
+ */
+
 public class AuthActivity extends AppCompatActivity {
 
     private EditText mLogin;
@@ -22,11 +28,11 @@ public class AuthActivity extends AppCompatActivity {
     private View.OnClickListener mOnEnterClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            //TODO: Переход в окно профиля
+            // TODO: 21.01.21 Переход в окно профиля
             if (isEmailValid() && isPasswordValid()) {
                 Intent startProfileIntent = new Intent(AuthActivity.this, ProfileActivity.class);
-                startProfileIntent.putExtra(ProfileActivity.EMAIL_KEY, mLogin.getText().toString());
-                startProfileIntent.putExtra(ProfileActivity.PASSWORD_KEY, mPassword.getText().toString());
+                startProfileIntent.putExtra(ProfileActivity.USER_KEY,
+                        new User(mLogin.getText().toString(), mPassword.getText().toString()));
                 startActivity(startProfileIntent);
             } else {
                 showMessage(R.string.login_error_input);
@@ -41,7 +47,7 @@ public class AuthActivity extends AppCompatActivity {
     private View.OnClickListener mOnRegistrationClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            //TODO: Переход в окно регистрации пользователя
+            // TODO: 25.01.21 Переход в окно регистрации пользователя
         }
     };
 

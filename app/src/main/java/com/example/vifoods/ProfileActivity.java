@@ -8,10 +8,15 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatImageView;
 
+/**
+ * Окно профиля, содержащее основную информацию об аккаунте
+ * @author Vitaly Melnichenko
+ * @version 1.0
+ */
+
 public class ProfileActivity extends AppCompatActivity {
 
-    public static String EMAIL_KEY = "EMAIL_KEY";
-    public static String PASSWORD_KEY = "PASSWORD_KEY";
+    public static final String USER_KEY = "USER_KEY";
 
     private View.OnClickListener mOnClickListener = new View.OnClickListener() {
         @Override
@@ -22,6 +27,7 @@ public class ProfileActivity extends AppCompatActivity {
     private AppCompatImageView mPhoto;
     private TextView mLogin;
     private TextView mPassword;
+    private User mUser;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,8 +39,9 @@ public class ProfileActivity extends AppCompatActivity {
         mPassword = findViewById(R.id.tvPassword);
 
         Bundle bundle = getIntent().getExtras();
-        mLogin.setText(bundle.getString(EMAIL_KEY));
-        mPassword.setText(bundle.getString(PASSWORD_KEY));
+        mUser = (User) bundle.get(USER_KEY);
+        mLogin.setText(bundle.getString(mUser.getLogin()));
+        mPassword.setText(bundle.getString(mUser.getPassword()));
 
         mPhoto.setOnClickListener(mOnClickListener);
     }
