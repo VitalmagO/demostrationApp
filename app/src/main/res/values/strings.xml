@@ -4,5 +4,7 @@
     <string name="hint_password">Password</string>
     <string name="login_enter">Войти</string>
     <string name="login_registration">Зарегистрироваться</string>
-    <string name="login_error_input">Логин или пароль не совпадают</string>
+    <string name="login_error_input">Неверный логин или пароль</string>
+    <string name="email">E-mail:</string>
+    <string name="password">Password:</string>
 </resources>

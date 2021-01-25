@@ -1,5 +1,6 @@
 package com.example.vifoods;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -21,8 +22,12 @@ public class AuthActivity extends AppCompatActivity {
     private View.OnClickListener mOnEnterClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
+            //TODO: Переход в окно профиля
             if (isEmailValid() && isPasswordValid()) {
-                // TODO: 20.01.21 Переход на главное окно  
+                Intent startProfileIntent = new Intent(AuthActivity.this, ProfileActivity.class);
+                startProfileIntent.putExtra(ProfileActivity.EMAIL_KEY, mLogin.getText().toString());
+                startProfileIntent.putExtra(ProfileActivity.PASSWORD_KEY, mPassword.getText().toString());
+                startActivity(startProfileIntent);
             } else {
                 showMessage(R.string.login_error_input);
             }
@@ -36,7 +41,7 @@ public class AuthActivity extends AppCompatActivity {
     private View.OnClickListener mOnRegistrationClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            //todo
+            //TODO: Переход в окно регистрации пользователя
         }
     };
 
