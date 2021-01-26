@@ -40,8 +40,8 @@ public class ProfileActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
         mUser = (User) bundle.get(USER_KEY);
-        mLogin.setText(bundle.getString(mUser.getLogin()));
-        mPassword.setText(bundle.getString(mUser.getPassword()));
+        mLogin.setText(mUser.getLogin());
+        mPassword.setText(mUser.getPassword());
 
         mPhoto.setOnClickListener(mOnClickListener);
     }
