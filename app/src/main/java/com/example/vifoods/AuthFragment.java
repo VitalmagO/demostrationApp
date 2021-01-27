@@ -41,7 +41,6 @@ public class AuthFragment extends Fragment {
     private View.OnClickListener mOnEnterClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            // TODO: 21.01.21 Переход в окно профиля
             if (isEmailValid() && isPasswordValid()) {
                 Intent startProfileIntent = new Intent(getActivity(), ProfileActivity.class);
                 startProfileIntent.putExtra(ProfileActivity.USER_KEY,
@@ -60,7 +59,10 @@ public class AuthFragment extends Fragment {
     private View.OnClickListener mOnRegistrationClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            // TODO: 25.01.21 Переход в окно регистрации пользователя
+            getFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.fragment_container, RegistrationFragment.newInstance())
+                    .commit();
         }
     };
 

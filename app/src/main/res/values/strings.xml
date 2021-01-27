@@ -5,6 +5,12 @@
     <string name="login_enter">Войти</string>
     <string name="login_registration">Зарегистрироваться</string>
     <string name="login_error_input">Неверный логин или пароль</string>
-    <string name="email">E-mail:</string>
+    <string name="email">E-mail</string>
     <string name="password">Password:</string>
+    <string name="password_enter">Введите пароль</string>
+    <string name="password_enter_again">Повторите пароль</string>
+    <string name="register">Зарегистрироваться</string>
+    <string name="login_register_success">Регистрация прошла успешно</string>
+    <string name="login_register_error">Логин уже занят</string>
+    <string name="input_error">Ошибка ввода</string>
 </resources>
