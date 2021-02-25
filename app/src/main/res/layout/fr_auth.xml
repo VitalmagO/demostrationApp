@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/etLogin"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <EditText
+    <AutoCompleteTextView
         android:id="@+id/etPassword"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -29,18 +29,18 @@
 
         <Button
             android:id="@+id/btnEnter"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/login_enter"
-            android:layout_weight="1">
-        </Button>
+            android:layout_weight="1"
+            android:textSize="12sp"/>
 
         <Button
             android:id="@+id/btnRegistration"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/login_registration"
-            android:layout_weight="1">
-        </Button>
+            android:layout_weight="1"
+            android:textSize="12sp"/>
     </LinearLayout>
 </LinearLayout>
